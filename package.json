@@ -1,0 +1,30 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --inspect ./index.js --env dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^0.2.14",
+    "ejs": "^2.5.7",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-log4": "^2.3.0",
+    "koa-router": "^7.3.0",
+    "koa-session2": "^2.2.5",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4",
+    "minimist": "^1.2.0",
+    "moment": "^2.20.1"
+  },
+    "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}

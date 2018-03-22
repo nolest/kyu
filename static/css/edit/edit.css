@@ -1,0 +1,9 @@
+.pageMain #btn {
+  background: #4e86f9;
+  width: 200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px; }

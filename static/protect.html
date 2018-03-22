@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>星汉科技 & 快娱网络</title>
+    <meta name="keywords" content="星汉科技,快娱网络,游戏玩家社交平台,社交网络,微信小游戏,微信小程序">
+    <meta name="description" content="星汉（广州）科技有限公司是优质游戏推荐平台及游戏分享社区。公司以“用心分享游戏”为核心理念，为游戏玩家提供优秀的游戏产品及实时的游戏资讯；为游戏爱好者提供分享互动的平台，结识更多的游戏同伴。">
+    <meta name="mobile-agent" content="format=html5;url=//www.starsriver.com/">
+    <link type="text/css" rel="stylesheet" href="./css/base.css" />
+    <link type="text/css" rel="stylesheet" href="./css/box.css" />
+    <link type="text/css" rel="stylesheet" href="./css/protect/protect.css" />
+    <link type="image/x-icon" href="./image/favicon.ico" rel="shortcut icon">
+    <link rel="Shortcut Icon" href="./image/favicon.ico">
+    <link rel="Bookmark" href="./image/favicon.ico">
+    <script src="./lib/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="ds-box align-center orient-v wrap" id="app" v-cloak>
+        <section class="ds-box pack-center header">
+            <div class="ds-box inside flex-1 pack-justify align-center">
+                <div class="ds-box">
+                    <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>">
+                </div>
+                <div class="ds-box flex-1 align-center pack-end taps_con">
+                    <div class="ds-box align-center taps" v-for="(item,index) in taps" @click.prevent="goto(item,$event)" :class="{ cur : item.cur }">{{ item.text }}</div>
+                </div>
+            </div>
+        </section>
+        <section class="ds-box pack-center bg"></section>
+        <section class="ds-box pack-center content">
+            <div class="ds-box inside">
+                <div class="ds-box flex-1 orient-v left_side">
+                    <div class="ds-box flex-1 orient-v way" v-for="item in info">
+                        <div class="ds-box align-center way_l">{{ item.title }}</div>
+                        <div class="way_r" v-html="item.txt"></div>
+                        <img v-if="item.img" :src="item.img" style="width:889px;" />
+                    </div>
+                </div>
+
+                <div class="ds-box orient-v sidebar">
+                    <div class="ds-box orient-v way" v-for="item in protect">
+                        <div class="ds-box align-center way_l">{{ item.title }}</div>
+                        <div class="way_r" v-if="item.txt" v-html="item.txt"></div>
+                        <div v-if="item.btn" class="ds-box align-center pack-center btn">{{ item.btn }}</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="ds-box pack-center align-center footer">
+            <div class="ds-box orient-v pack-center inside">
+                <div class="ds-box pack-center d">
+                    <div class="ds-box footer_item" v-for="(item) in footer">{{ item }}</div>
+                </div>
+                <div class="ds-box pack-center f">©2018 星汉（广州）科技有限公司 粤ICP备18011654号-1 地址：广州市越秀区三元里大道499号-523号伍福服装城1楼D区77号</div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                taps: [
+                    { text: '官网首页', url: '/', cur: false },
+                    { text: '关于星汉', url: '/about.html', cur: false },
+                    { text: '联系我们', url: '/contact.html', cur: false },
+                    { text: '家长监护', url: '/protect.html', cur: true }
+                ],
+                footer: [
+                    '抵制不良游戏 |',
+                    '拒绝盗版游戏 |',
+                    '注意自我保护 |',
+                    '谨防受骗上当 |',
+                    '适度游戏益脑 |',
+                    '沉迷游戏伤身 |',
+                    '合理安排时间 |',
+                    '享受健康生活 |'
+                ],
+                info: [
+                    { title: '工程介绍', txt: '“网络游戏未成年人家长监护工程”是一项由中华人民共和国文化部指导，旨在加强家长对未成年人参与网络游戏的监护，引导未成年人健康、绿色参与网络游戏，和谐家庭关系的社会性公益行动。它提供了一种切实可行的方法，一种家长实施监控的管道，使家长纠正部分未成年子女沉迷游戏的行为成为可能。 该项社会公益行动充分反映了中国网络游戏行业高度的社会责任感，对未成年玩家合法权益的关注及对用实际行动营造和谐社会的愿望。' },
+                    { title: '未成年人健康参与网络游戏提示', txt: '随着网络在青少年中的普及，未成年人接触网络游戏已经成为普遍现象。为保护未成年人健康参与游戏，在政府进一步加强行业管理的前 提下,家长也应当加强监护引导。为此，我们为未成年人参与网络游戏提供以下意见：</br>一、主动控制游戏时间。游戏只是学习、生活的调剂，要积极参与线下的各类活动，并让父母了解自己在网络游戏中的行为和体验。</br>二、不参与可能耗费较多时间的游戏设置。不玩大型角色扮演类游戏，不玩有PK类设置的游戏。在校学生每周玩游戏不超过2小时，每月在 游戏中的花费不超过10元。</br>三、不要将游戏当作精神寄托。尤其在现实生活中遇到压力和挫折时，应多与家人朋友交流倾诉，不要只依靠游戏来缓解压力。</br>四、养成积极健康的游戏心态。克服攀比、炫耀、仇恨和报复等心理，避免形成欺凌弱小、抢劫他人等不良网络行为习惯。</br>五、注意保护个人信息。包括个人家庭、朋友身份信息，家庭、学校、单位地址，电话号码等，防范网络陷阱和网络犯罪。' },
+                    { title: '家长监护申请流程', img: './image/protect/protect_889x219.png' },
+                    { title: '流程介绍详细说明', txt: '在监护人发现被监护人有沉溺星汉游戏的情况下，监护人可向星汉（广州）科技有限公司申请发起未成年人家长监护机制。 监护人需亲自通过邮寄方式 向我司提供有效材料，向星汉（广州）科技有限公司提出未成年人账户监控的申请。在收到邮件后， 我司即开始启动监护机制审核流程，首先进入疑似账号身份确认期。' }
+                ],
+                protect: [
+                    { title: '监护通道', txt: '监护热线：020-89089086<br>客服电话：020-89089086<br>邮箱：hr@starsriver.cn<br>邮寄地址：广州市海珠区新港东路1000号保利世贸C座1410-1411室' },
+                    { title: '监护服务申请书', btn: '监护服务申请文档下载' },
+                    { title: '温馨提示', txt: '您在邮寄申请书时，要记得一起提供如下资料：<br>附件一：申请人的身份证（复印件）<br>附件二：被申请人的身份证（复印件）<br>附件三：申请人与被申请人的监护法律关系证明文件（户口簿或者其他合法有效证明文件）' }
+                ]
+            },
+            methods: {
+                goto: function (item, e) {
+                    console.log(item);
+                    window.location.href = item.url;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

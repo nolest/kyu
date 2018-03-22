@@ -1,0 +1,100 @@
+body {
+  min-width: 1202px; }
+
+.wrap {
+  background: #f2f2f2;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  position: relative; }
+  .wrap .header {
+    width: 100%;
+    background: #000;
+    height: 68px; }
+    .wrap .header .inside {
+      max-width: 960px; }
+    .wrap .header img {
+      width: auto;
+      height: 60px; }
+    .wrap .header .taps_con {
+      overflow: hidden;
+      height: 100%; }
+      .wrap .header .taps_con .taps {
+        height: 100%;
+        padding: 0px 20px;
+        font-size: 22px;
+        color: #fff;
+        cursor: pointer; }
+        .wrap .header .taps_con .taps:hover {
+          background: #222222; }
+        .wrap .header .taps_con .taps.cur {
+          background: #222222; }
+  .wrap .bg {
+    width: 100%;
+    height: 484px;
+    background: url("../../image/pic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    margin-bottom: 34px; }
+    .wrap .bg .inside {
+      max-width: 960px; }
+      .wrap .bg .inside .title {
+        height: 60px;
+        font-size: 60px;
+        color: #fff; }
+  .wrap .content {
+    width: 100%;
+    padding-bottom: 80px; }
+    .wrap .content .inside {
+      max-width: 1202px;
+      font-size: 20px;
+      color: #333;
+      line-height: 30px; }
+      .wrap .content .inside .session {
+        width: 100%; }
+        .wrap .content .inside .session .title {
+          width: 100%;
+          height: 90px;
+          margin-bottom: 30px;
+          font-size: 28px;
+          font-weight: 600;
+          color: #999; }
+          .wrap .content .inside .session .title .session_bg {
+            background: url("../../image/index_title_368x27.png") no-repeat;
+            width: 368px; }
+        .wrap .content .inside .session .item_list .inneritem {
+          vertical-align: top;
+          background: #fff;
+          margin-right: 34px;
+          margin-bottom: 34px; }
+          .wrap .content .inside .session .item_list .inneritem:nth-child(3n+3) {
+            margin-right: 0px; }
+          .wrap .content .inside .session .item_list .inneritem .inner_img {
+            height: 212px; }
+          .wrap .content .inside .session .item_list .inneritem .inner_title {
+            padding: 10px 18px 0px 18px;
+            font-size: 24px;
+            color: #333;
+            min-height: 36px; }
+          .wrap .content .inside .session .item_list .inneritem .inner_des {
+            min-height: 30px;
+            padding: 0px 18px 10px 18px;
+            font-size: 14px;
+            color: #999; }
+  .wrap .footer {
+    height: 130px;
+    width: 100%;
+    background: #000; }
+    .wrap .footer .inside {
+      max-width: 960px; }
+      .wrap .footer .inside .d {
+        margin-bottom: 10px; }
+        .wrap .footer .inside .d .footer_item {
+          margin-left: 5px;
+          font-size: 16px;
+          color: #fff; }
+      .wrap .footer .inside .f {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #666; }

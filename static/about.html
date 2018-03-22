@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>星汉科技 & 快娱网络</title>
+    <meta name="keywords" content="星汉科技,快娱网络,游戏玩家社交平台,社交网络,微信小游戏,微信小程序">
+    <meta name="description" content="星汉（广州）科技有限公司是优质游戏推荐平台及游戏分享社区。公司以“用心分享游戏”为核心理念，为游戏玩家提供优秀的游戏产品及实时的游戏资讯；为游戏爱好者提供分享互动的平台，结识更多的游戏同伴。">
+    <meta name="mobile-agent" content="format=html5;url=//www.starsriver.com/">
+    <link type="text/css" rel="stylesheet" href="./css/base.css" />
+    <link type="text/css" rel="stylesheet" href="./css/box.css" />
+    <link type="text/css" rel="stylesheet" href="./css/about/about.css" />
+    <link type="image/x-icon" href="./image/favicon.ico" rel="shortcut icon">
+    <link rel="Shortcut Icon" href="./image/favicon.ico">
+    <link rel="Bookmark" href="./image/favicon.ico">
+    <script src="./lib/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="ds-box align-center orient-v wrap" id="app" v-cloak>
+        <section class="ds-box pack-center header">
+            <div class="ds-box inside flex-1 pack-justify align-center">
+                <div class="ds-box">
+                    <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>">
+                </div>
+                <div class="ds-box flex-1 align-center pack-end taps_con">
+                    <div class="ds-box align-center taps" v-for="(item,index) in taps" @click.prevent="goto(item,$event)" :class="{ cur : item.cur }">{{ item.text }}</div>
+                </div>
+                <!--div class="logo left">
+                    <a href="//www.starsriver.cn">
+                        <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>">
+                    </a>
+                </div>
+                <ul class="topNav fontYaHei right">
+                    <li>
+                        <a href="https://www.lagou.com/gongsi/296449.html">社会招聘</a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="//www.starsriver.cn">星汉简介</a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="//www.starsriver.cn">首页</a>
+                    </li>
+                </ul-->
+            </div>
+        </section>
+        <section class="ds-box pack-center bg">
+            <div class="ds-box inside align-end">
+                <div class="ds-box title">关于星汉</div>
+            </div>
+        </section>
+        <section class="ds-box pack-center content">
+            <div class="ds-box orient-v inside">
+                <div class="ds-box flex-1">星汉（广州）科技有限公司成立于2017年8月，公司办公地址位于琶洲高档写字楼，旗下 "ReadyGO" 是优质游戏推荐平台及游戏分享社区。公司以 "用心分享游戏" 为核心理念，为游戏玩家提供优秀的游戏产品及实时的游戏资讯；为游戏爱好者提供分享互动的平台，结识更多的游戏同伴。</div>
+                <div class="ds-box flex-1">星汉的目标是成为最优秀的游戏玩家社区，通过游戏连接每一位游戏爱好者。星汉资金背景雄厚，目前除了游戏社交平台外，也有手游研发、H5小游戏及微信小程序开发的业务，公司目前处于高速发展中，欢迎广大志同道合的朋友们加入~~</div>
+            </div>
+        </section>
+
+        <footer class="ds-box pack-center align-center footer">
+            <div class="ds-box orient-v pack-center inside">
+                <div class="ds-box pack-center d">
+                    <div class="ds-box footer_item" v-for="(item) in footer">{{ item }}</div>
+                </div>
+                <div class="ds-box pack-center f">©2018 星汉（广州）科技有限公司 粤ICP备18011654号-1 地址：广州市越秀区三元里大道499号-523号伍福服装城1楼D区77号</div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!', 
+                taps: [
+                    { text: '官网首页', url: '/', cur: false },
+                    { text: '关于星汉', url: '/about.html', cur: true },
+                    { text: '联系我们', url: '/contact.html', cur: false },
+                    { text: '家长监护', url: '/protect.html', cur: false }
+                ],
+                footer: [
+                    '抵制不良游戏 |',
+                    '拒绝盗版游戏 |',
+                    '注意自我保护 |',
+                    '谨防受骗上当 |',
+                    '适度游戏益脑 |',
+                    '沉迷游戏伤身 |',
+                    '合理安排时间 |',
+                    '享受健康生活'
+                ]
+            },
+            methods: {
+                goto: function (item, e) {
+                    console.log(item);
+                    window.location.href = item.url;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

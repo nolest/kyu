@@ -1,0 +1,79 @@
+.wrap {
+  background: #f2f2f2;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  position: relative; }
+  .wrap .header {
+    width: 100%;
+    background: #000;
+    height: 68px; }
+    .wrap .header .inside {
+      max-width: 960px; }
+    .wrap .header img {
+      width: auto;
+      height: 60px; }
+    .wrap .header .taps_con {
+      overflow: hidden;
+      height: 100%; }
+      .wrap .header .taps_con .taps {
+        height: 100%;
+        padding: 0px 20px;
+        font-size: 22px;
+        color: #fff;
+        cursor: pointer; }
+        .wrap .header .taps_con .taps:hover {
+          background: #222222; }
+        .wrap .header .taps_con .taps.cur {
+          background: #222222; }
+  .wrap .bg {
+    width: 100%;
+    height: 484px;
+    background: url("../../image/join/join_1920x484.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    margin-bottom: 10px; }
+    .wrap .bg .inside {
+      width: 960px; }
+      .wrap .bg .inside .title {
+        padding-left: 140px;
+        font-size: 60px;
+        color: #fff; }
+  .wrap .content {
+    width: 100%; }
+    .wrap .content .inside {
+      width: 960px;
+      font-size: 20px;
+      color: #333;
+      line-height: 30px; }
+      .wrap .content .inside .way {
+        border: 1px solid #ddd;
+        background: #fff;
+        margin-bottom: 10px;
+        min-height: 96px;
+        padding: 0px 30px; }
+        .wrap .content .inside .way .way_l {
+          color: #999;
+          font-size: 24px; }
+        .wrap .content .inside .way .way_r {
+          color: #333;
+          font-size: 24px; }
+  .wrap .footer {
+    position: fixed;
+    bottom: 0;
+    height: 130px;
+    width: 100%;
+    background: #000; }
+    .wrap .footer .inside {
+      width: 960px; }
+      .wrap .footer .inside .d {
+        margin-bottom: 10px; }
+        .wrap .footer .inside .d .footer_item {
+          margin-left: 5px;
+          font-size: 16px;
+          color: #fff; }
+      .wrap .footer .inside .f {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #666; }
