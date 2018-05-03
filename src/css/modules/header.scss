@@ -1,0 +1,29 @@
+.header {
+    width:100%;
+    background: #000;
+    height: 68px;
+    .inside{
+        max-width: 960px;  
+    }
+    img{
+        width: auto;
+        height: 60px;
+    }
+    .taps_con{
+        overflow: hidden;
+        height:100%;
+        .taps{
+            height: 100%;
+            padding: 0px 20px;
+            font-size: 22px;
+            color: #fff;
+            cursor: pointer;
+            &:hover{
+                background: #222222;
+            }
+            &.cur{
+                background: #222222;
+            }
+        }
+    }
+}

@@ -4,42 +4,13 @@
     height: auto;
     min-height: 100%;
     position: relative;
-    .header {
-        width:100%;
-        background: #000;
-        height: 68px;
-        .inside{
-            max-width: 960px; 
-        }
-        img{
-            width: auto;
-            height: 60px;
-        }
-        .taps_con{
-            overflow: hidden;
-            height:100%;
-            .taps{
-                height: 100%;
-                padding: 0px 20px;
-                font-size: 22px;
-                color: #fff;
-                cursor: pointer;
-                &:hover{
-                    background: #222222;
-                }
-                &.cur{
-                    background: #222222;
-                }
-            }
-        }
-    }
     .bg{
         width:100%;
         height: 484px; 
         background: url("../../image/join/join_1920x484.png"); 
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 50% 0%;
+        background-position: 50% 0%; 
         margin-bottom: 10px;
         .inside{           
             width: 960px;
@@ -73,30 +44,5 @@
                 }
             }
         }
-    }
-    .footer{
-        position: fixed;
-        bottom: 0;
-        height: 130px;
-        width:100%;
-        background: #000;
-        .inside{
-            width: 960px;
-            .d{
-                margin-bottom: 10px;
-                .footer_item{
-                    margin-left: 5px;
-                    font-size: 16px;
-                    color: #fff;
-                }
-            }
-
-            .f{
-                margin-top: 10px;
-                font-size: 16px;
-                color: #666;
-            }
-        }
-
     }
 }

@@ -1,3 +1,7 @@
+.fn-hide {
+    display: none !important; 
+}
+
 .ds-block {
     display: block
 }

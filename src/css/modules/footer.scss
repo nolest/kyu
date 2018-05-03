@@ -1,0 +1,23 @@
+.footer{
+    height: 130px;
+    width:100%;
+    background: #000;
+    .inside{
+        max-width: 960px;
+        .d{
+            margin-bottom: 10px;
+            .footer_item{
+                margin-left: 5px;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+
+        .f{
+            margin-top: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+    }
+
+}

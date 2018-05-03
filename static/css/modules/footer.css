@@ -1,0 +1,16 @@
+.footer {
+  height: 130px;
+  width: 100%;
+  background: #000; }
+  .footer .inside {
+    max-width: 960px; }
+    .footer .inside .d {
+      margin-bottom: 10px; }
+      .footer .inside .d .footer_item {
+        margin-left: 5px;
+        font-size: 16px;
+        color: #fff; }
+    .footer .inside .f {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #666; }

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>星汉科技 & 快娱网络</title>
+    <meta name="keywords" content="星汉科技,快娱网络,游戏玩家社交平台,社交网络,微信小游戏,微信小程序">
+    <meta name="description" content="星汉（广州）科技有限公司是优质游戏推荐平台及游戏分享社区。公司以“用心分享游戏”为核心理念，为游戏玩家提供优秀的游戏产品及实时的游戏资讯；为游戏爱好者提供分享互动的平台，结识更多的游戏同伴。">
+    <meta name="mobile-agent" content="format=html5;url=//www.starsriver.com/">
+    <link type="text/css" rel="stylesheet" href="./css/base.css" />
+    <link type="text/css" rel="stylesheet" href="./css/box.css" />
+    <link type="text/css" rel="stylesheet" href="./css/charge/charge.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/header.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/footer.css" />
+    <link type="image/x-icon" href="./image/favicon.ico" rel="shortcut icon">
+    <link rel="Shortcut Icon" href="./image/favicon.ico">
+    <link rel="Bookmark" href="./image/favicon.ico">
+    <script src="./lib/vue.min.js"></script>
+    <script src="./modules/header/header.js"></script>
+    <script src="./modules/footer/footer.js"></script>
+</head>
+
+<body>
+    <div class="ds-box align-center orient-v wrap" id="app" v-cloak>
+        <xh-header curpage="charge"></xh-header>
+        <section class="ds-box pack-center bg">
+            <div class="ds-box inside align-end">
+                <div class="ds-box title">充值中心</div>
+            </div>
+        </section>
+        <section class="ds-box pack-center content">
+            <div class="ds-box inside">
+                <div class="side_bar">
+                    <div class="ds-box align-center pack-center item">支付宝</div>
+                    <div class="ds-box align-center pack-center item">网上银行</div>
+                </div>
+                <div class="ds-box orient-v con">
+                    <div class="ds-box con_in">
+                        <div class="ds-box pack-end w">充值账号：</div>
+                        <input class="inp"/>
+                    </div>
+                    <div class="ds-box con_in">
+                        星汉（广州）科技有限公司
+                    </div>
+                    <div class="ds-box con_in">
+                        <div class="ds-box pack-end  w">充值到：</div>
+                        <div class="ds-box">
+                            <div class="ds-box xhb">
+                                星汉币
+                            </div>
+                            <div class="ds-box xhbd">
+                                1人民币兑换10星汉币
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-box con_in">
+                        <div class="ds-box pack-end w">充值金额：</div>
+                        <div class="p">
+                            <div class="price" v-for="(item,index) in price">
+                                {{ item }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-box pack-center align-center con_in">
+                        <div class="ds-box pack-center align-center btn">立即充值</div>
+                    </div>
+                    <div class="ds-box orient-v payintro">
+                            <b>支付宝充值说明</b>
+                            <div class="ds-box orient-v">
+                                    <div class="ds-box">针对支付宝用户。</div>
+                                    <div class="ds-box">支持全国29家银行卡(需要开通网上银行)及支付宝帐号。</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <xh-footer></xh-footer>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                price: ['10元', '50元', '100元', '200元', '500元', '1000元', '2000元', '50000元']
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

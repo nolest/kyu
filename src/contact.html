@@ -12,40 +12,19 @@
     <link type="text/css" rel="stylesheet" href="./css/base.css" />
     <link type="text/css" rel="stylesheet" href="./css/box.css" />
     <link type="text/css" rel="stylesheet" href="./css/contact/contact.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/header.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/footer.css" />
     <link type="image/x-icon" href="./image/favicon.ico" rel="shortcut icon">
     <link rel="Shortcut Icon" href="./image/favicon.ico">
     <link rel="Bookmark" href="./image/favicon.ico">
     <script src="./lib/vue.min.js"></script>
+    <script src="./modules/header/header.js"></script>
+    <script src="./modules/footer/footer.js"></script>
 </head>
 
 <body>
     <div class="ds-box align-center orient-v wrap" id="app" v-cloak>
-        <section class="ds-box pack-center header">
-            <div class="ds-box inside flex-1 pack-justify align-center">
-                <div class="ds-box">
-                    <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>">
-                </div>
-                <div class="ds-box flex-1 align-center pack-end taps_con">
-                    <div class="ds-box align-center taps" v-for="(item,index) in taps" @click.prevent="goto(item,$event)" :class="{ cur : item.cur }">{{ item.text }}</div>
-                </div>
-                <!--div class="logo left">
-                    <a href="//www.starsriver.cn">
-                        <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>">
-                    </a>
-                </div>
-                <ul class="topNav fontYaHei right">
-                    <li>
-                        <a href="https://www.lagou.com/gongsi/296449.html">社会招聘</a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" href="//www.starsriver.cn">星汉简介</a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" href="//www.starsriver.cn">首页</a>
-                    </li>
-                </ul-->
-            </div>
-        </section>
+        <xh-header curpage="contact"></xh-header>
         <section class="ds-box pack-center bg">
             <div class="ds-box inside align-center">
                 <div class="ds-box title">联系我们</div>
@@ -60,36 +39,12 @@
             </div>
         </section>
 
-        <footer class="ds-box pack-center align-center footer">
-            <div class="ds-box orient-v pack-center inside">
-                <div class="ds-box pack-center d">
-                    <div class="ds-box footer_item" v-for="(item) in footer">{{ item }}</div>
-                </div>
-                <div class="ds-box pack-center f">©2018 星汉（广州）科技有限公司 粤ICP备18011654号-1 地址：广州市越秀区三元里大道499号-523号伍福服装城1楼D区77号</div>
-            </div>
-        </footer>
+        <xh-footer></xh-footer>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue!',
-                taps: [
-                    { text: '官网首页', url: '/', cur: false },
-                    { text: '关于星汉', url: '/about.html', cur: false },
-                    { text: '联系我们', url: '/contact.html', cur: true },
-                    { text: '家长监护', url: '/protect.html', cur: false }
-                ],
-                footer: [
-                    '抵制不良游戏 |',
-                    '拒绝盗版游戏 |',
-                    '注意自我保护 |',
-                    '谨防受骗上当 |',
-                    '适度游戏益脑 |',
-                    '沉迷游戏伤身 |',
-                    '合理安排时间 |',
-                    '享受健康生活 '
-                ],
                 way: [
                     { text: '合作洽谈：', txt: '020-89089086 &nbsp;&nbsp;&nbsp; hr@starsriver.cn' },
                     { text: '客服电话：', txt: '020-89089086 &nbsp;&nbsp;&nbsp; hr@starsriver.cn' },
@@ -97,10 +52,7 @@
                 ]
             },
             methods: {
-                goto: function (item, e) {
-                    console.log(item);
-                    window.location.href = item.url;
-                }
+
             }
         })
     </script>

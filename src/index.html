@@ -12,24 +12,19 @@
     <link type="text/css" rel="stylesheet" href="./css/base.css" />
     <link type="text/css" rel="stylesheet" href="./css/box.css" />
     <link type="text/css" rel="stylesheet" href="./css/index/index.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/header.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modules/footer.css" />
     <link type="image/x-icon" href="./image/favicon.ico" rel="shortcut icon">
     <link rel="Shortcut Icon" href="./image/favicon.ico">
     <link rel="Bookmark" href="./image/favicon.ico">
     <script src="./lib/vue.min.js"></script>
+    <script src="./modules/header/header.js"></script>
+    <script src="./modules/footer/footer.js"></script>
 </head>
 
 <body>
     <div class="ds-box align-center orient-v wrap" id="app" v-cloak>
-        <section class="ds-box pack-center header">
-            <div class="ds-box inside flex-1 pack-justify align-center">
-                <div class="ds-box">
-                    <img style="margin-top:8px;" src="./image/logo_250x120.png" alt="<h1>星汉科技</h1>"/>
-                </div>
-                <div class="ds-box flex-1 align-center pack-end taps_con">
-                    <div class="ds-box align-center taps" v-for="(item,index) in taps" @click.prevent="goto(item,$event)" :class="{ cur : item.cur }">{{ item.text }}</div>
-                </div>
-            </div>
-        </section>
+        <xh-header curpage="index"></xh-header>
         <section class="ds-box pack-center bg"></section>
         <section class="ds-box pack-center content">
             <div class="ds-box inside orient-v">
@@ -41,85 +36,125 @@
                     </div>
                     <div class="ds-box item_list">
                         <div class="ds-box orient-v inneritem" v-for="inneritem in item.list" style="display:inline-block">
-                            <img :src="inneritem.image" class="inner_img"/>
+                            <img :src="inneritem.image" class="inner_img" />
                             <div class="inner_title">{{ inneritem.title }}</div>
                             <div class="inner_des">{{ inneritem.des }}</div>
+                            <div class="ds-box inner_btn">
+                                <div class="ds-box pack-center align-center btn" @click="game(inneritem,$event)">开始游戏</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="ds-box pack-center align-center footer">
-            <div class="ds-box orient-v pack-center inside">
-                <div class="ds-box pack-center d">
-                    <div class="ds-box footer_item" v-for="(item) in footer">{{ item }}</div>
-                </div>
-                <div class="ds-box pack-center f">©2018 星汉（广州）科技有限公司 粤ICP备18011654号-1 地址：广州市越秀区三元里大道499号-523号伍福服装城1楼D区77号</div>
+        <xh-footer> </xh-footer>
+        <div class="frame_contain" :style="{ width: contain_width, height:contain_height, top:frame_top,right:frame_right }" v-if="show_frame">
+            <div class="ds-box pack-justify title">
+                <div class="ds-box pack-center align-center text">{{ cur_title }}</div>
+                <div class="ds-box pack-center align-center close" @click="close">关闭</div>
             </div>
-        </footer>
+            <iframe class="frame" frameborder="0" :src="cur_frame"></iframe>
+        </div>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue!',
-                taps: [
-                    { text: '官网首页', url: '/', cur: true },
-                    { text: '关于星汉', url: '/about.html', cur: false },
-                    { text: '联系我们', url: '/contact.html', cur: false },
-                    { text: '家长监护', url: '/protect.html', cur: false }
-                ],
-                footer: [
-                    '抵制不良游戏 |',
-                    '拒绝盗版游戏 |',
-                    '注意自我保护 |',
-                    '谨防受骗上当 |',
-                    '适度游戏益脑 |',
-                    '沉迷游戏伤身 |',
-                    '合理安排时间 |',
-                    '享受健康生活 '
-                ],
+                cur_frame: '',
+                cur_title: '',
+                show_frame : false,
                 content: [
                     {
-                        title: '动漫',
-                        list: [
-                            {
-                                image: './image/index/index_01.png',
-                                title: 'ReadyGo 动漫游戏资讯',
-                                des: '海量资讯，洞悉游戏事态！'
-                            },
-                            {
-                                image: './image/index/index_02.png',
-                                title: '青之驱魔师2',
-                                des: '全34集'
-                            },
-                            {
-                                image: './image/index/index_03.png',
-                                title: '灵契',
-                                des: '更新至第2集'
-                            }
-                        ]
-                    }, {
                         title: '游戏',
                         list: [
                             {
-                                image: './image/index/index_04.png',
-                                title: '摸猫（微信小程序）',
-                                des: '请在微信小游戏搜索'
+                                image: './image/index/game_01.png',
+                                title: '戳鼻孔',
+                                des: '史上最无下限的游戏-戳鼻孔，戳到有什么奖励？嘿嘿嘿自行体会吧…',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/NosePokingGame/index.html'
                             },
                             {
-                                image: './image/index/index_05.png',
-                                title: '微微三国',
-                                des: ''
+                                image: './image/index/game_02.png',
+                                title: '翻翻乐',
+                                des: '想挑战自己的记忆力吗？最短时间把牌翻完你就赢啦！',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/matchinggame/index.html'
+                            },
+                            {
+                                image: './image/index/game_03.jpg',
+                                title: '找你妹',
+                                des: '找茬游戏腻了吗？一起来玩找你妹！眼睛手指一起动，看你能找多少吧',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/findgame/index.html'
+                            },
+                            {
+                                image: './image/index/game_04.png',
+                                title: '迷宫',
+                                des: '双人模式的迷宫逃脱游戏，快叫上你的朋友一起来玩吧！发挥你的侦探头脑，破解迷宫吧',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/mazeGame/index.html'
+                            },
+                            {
+                                image: './image/index/game_05.jpg',
+                                title: '连连看',
+                                des: '满屏的果蔬哪个是你最爱呢？两个一起消除，水果就归你啦',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/llkGame/index.html'
+                            },
+                            {
+                                image: './image/index/game_06.png',
+                                title: 'Dune',
+                                des: '控制小球在沙丘上滚动，飞越白线就能得分，试试看你的小球能跑多远吧',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/dune/index.html'
+                            },
+                            {
+                                image: './image/index/game_07.png',
+                                title: 'fireUp',
+                                des: '小熊猫发射圆球击碎障碍物，不断强化小球，还有随机奖励，你能坚持多久呢',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/fireup/index.html'
+                            },
+                            {
+                                image: './image/index/game_08.png',
+                                title: '抢金币',
+                                des: '心算能力及格吗？来抢金币试试，最快凑出金币的人',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/RobbingGold/index.html'
+                            },
+                            {
+                                image: './image/index/game_09.png',
+                                title: '吃奶酪',
+                                des: '动动手指帮可爱的小老鼠吃到奶酪吧，踩错绳子颜色会把猫引来哦',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/eatcheese/index.html'
+                            },
+                            {
+                                image: './image/index/game_10.jpg',
+                                title: '五子棋',
+                                des: '黑白小鸟来当棋子，五只小鸟先连成线的获胜',
+                                url: 'https://hongen-http.kuaiyugo.com/h5Games/gobang/index.html'
                             }
                         ]
                     }
                 ]
             },
             methods: {
-                goto: function (item, e) {
-                    console.log(item);
-                    window.location.href = item.url;
+                game: function (item, e) {
+                    console.log('123')
+                    this.show_frame = true;
+                    this.cur_frame = item.url;
+                    this.cur_title = item.title;
+                },
+                close : function(){
+                    this.show_frame = false;
+                    this.cur_frame = '';
+                }
+            },
+            computed: {
+                frame_top: function(){
+                    return (window.innerHeight-36)*0.1 + 'px'
+                },
+                frame_right: function(){
+                    return (window.innerWidth-(window.innerHeight-36*0.8)/16*7.5)/2 + 'px'
+                },
+                contain_height:function(){
+                    return (window.innerHeight)*0.8 + 'px'
+                },
+                contain_width:function(){
+                    return (window.innerHeight-36*0.8)/16*7.5 + 'px'
                 }
             }
         })
